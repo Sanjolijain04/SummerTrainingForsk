@@ -1,0 +1,35 @@
+{
+     "Teacher" :[
+             { "Teacher1" :
+                 {
+                    "First Name" : "Atul",
+                    "Last Name" : "Sharma",
+                    "Photo" : "www.pic1.com",
+                    "Department" : "CS",
+                    "Research Areas" : ["Physics", "IOT"],
+                    "Contact Details" :
+                        {
+                                "Phone Number" : 67389748734,
+                                "Email" : "abc@yy.com"
+                        }
+                }
+                
+            },
+                        
+            { "Teacher2" :
+                 {
+                    "First Name" : "Sakar",
+                    "Last Name" : "Gupta",
+                    "Photo" : "www.pic2.com",
+                    "Department" : "IT",
+                    "Research Areas" : ["ML", "IOT"],
+                    "Contact Details" :
+                        {
+                                "Phone Number" : 673647478734,
+                                "Email" : "sakarc@yy.com"
+                        }
+                }
+                
+            }
+             ]
+}

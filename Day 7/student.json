@@ -1,0 +1,34 @@
+{
+"Student" : 
+     [{"student1": 
+     {
+          "first nam" : "Sanjoli",
+          "last name" : "Jain",
+          "photo" : "www.tt.com",
+          "Deaprtment" : "Computer Engineering",
+          "Contact Details" : 
+          {
+                  "Phone Number" : 9876543220,
+                  "email" : "sanjolijain04@gmail.com"    
+          }
+          
+     }
+     },
+     {
+     "student2" :
+         {
+               "first nam" : "Saloni",
+          "last name" : "Jain",
+          "photo" : "www.yt.com",
+          "Deaprtment" : "Electronics Engineering",
+          "Contact Details" : 
+          {
+                  "Phone Number" : 9888843220,
+                  "email" : "salonijain04@gmail.com"    
+          }
+          
+         }
+         }
+          
+     ]
+}
