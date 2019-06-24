@@ -8,7 +8,7 @@ We need to predict the weekly sales at given stores on given dates according to 
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-
+import pickle
 
 
 #read all the given data and make dataframe for each data
@@ -44,7 +44,7 @@ Total_Sales_foreach_dept = merge_df.groupby(['Store','Dept'])['Weekly_Sales'].ap
 
 #Managing the index
 weeklyscale_by_store=weekly_sales_by_store.reset_index()
-Total_sacle_by_dept = Total_Sales_foreach_dept.reset_index()
+Total_sale_by_dept = Total_Sales_foreach_dept.reset_index()
 """
 In walmart store, only 'weekly sales' column is added
 we are working on the training data
@@ -58,11 +58,21 @@ Walmart_Store.reset_index()
 Walmart_Store['DateTimeObj']=[dt.strptime(x,'%Y-%m-%d') for x in list(Walmart_Store['Date'])]
 Walmart_Store["DateO"] = Walmart_Store['DateTimeObj'].apply(lambda x: x.toordinal())
 Walmart_Store=Walmart_Store.drop(['DateTimeObj','Date',], axis=1)
+
+
 from sklearn.preprocessing import LabelEncoder
 le=LabelEncoder()
+le1=LabelEncoder()
 
 Walmart_Store['IsHoliday']=le.fit_transform(Walmart_Store['IsHoliday'])
-Walmart_Store['Type']=le.fit_transform(Walmart_Store['Type'])
+Walmart_Store['Type']=le1.fit_transform(Walmart_Store['Type'])
+
+
+with open('label_encode_isholiday.pickle', 'wb') as isholiday_file:
+    pickle.dump(le, isholiday_file)
+    
+with open('label_encode_type.pickle', 'wb') as type_file:
+    pickle.dump(le1, type_file)
 
 #train test split
 from sklearn.model_selection import train_test_split
@@ -71,17 +81,53 @@ WM_labels=Walmart_Store.iloc[:,1]
 
 train_ft_WM, test_ft_WM , train_lb_WM, test_lb_WM= train_test_split(WM_features, WM_labels, test_size=0.3,random_state=42)
 
+
+ 
 #standard scaling
 from sklearn.preprocessing import StandardScaler
 scaler=StandardScaler()
 train_df_WM=scaler.fit_transform(train_ft_WM)
 test_df_WM=scaler.fit_transform(test_ft_WM)
 
-#precdict 
-from sklearn.linear_model import LinearRegression
-regressor=LinearRegression()
 
-regressor.fit(train_ft_WM, train_lb_WM)
-labels_pred_WM=regressor.predict(test_ft_WM)
+with open('scaling.pickle', 'wb') as scaling_file:
+    pickle.dump(scaler, scaling_file)
 
-regressor.score(test_ft_WM, test_lb_WM)
+
+#prediction using random forest generator because avg score is 94 ,for decision tree avg score is 93,
+#and for linear regression it is 70
+from sklearn.ensemble import RandomForestRegressor
+
+regressor = RandomForestRegressor(n_estimators=25, random_state=0)  
+regressor.fit(train_df_WM, train_lb_WM)  
+labels_pred = regressor.predict(test_df_WM)  
+regressor.score(test_df_WM, test_lb_WM)
+
+with open('random_forest_regressor.pickle', 'wb') as regressor_file:
+    pickle.dump(regressor, regressor_file)
+
+
+#finding mean score using k fold cross validation
+from sklearn.model_selection import cross_val_score
+accuracies = cross_val_score(estimator = regressor, X =train_df_WM , y =train_lb_WM , cv = 10)
+print ("mean accuracy is",accuracies.mean())
+print (accuracies.std())
+
+
+#adding features to the test data
+merge_df_test=pd.merge(test_df, features_with_stores, on=['Store','Date','IsHoliday'], how='inner')
+
+#handle dates
+merge_df_test['DateTimeObj']=[dt.strptime(x,'%Y-%m-%d') for x in list(merge_df_test['Date'])]
+merge_df_test["DateO"] = merge_df_test['DateTimeObj'].apply(lambda x: x.toordinal())
+merge_df_test=merge_df_test.drop(['DateTimeObj','Date','Dept'], axis=1)
+#label encoding test data
+
+
+merge_df_test['IsHoliday']=le.fit_transform(merge_df_test['IsHoliday'])
+merge_df_test['Type']=le1.fit_transform(merge_df_test['Type'])
+#finding prediction for test data
+test_pred=regressor.predict(merge_df_test)
+
+
+

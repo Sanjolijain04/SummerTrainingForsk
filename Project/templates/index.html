@@ -1,0 +1,38 @@
+{% block code%}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WalMart | Predict the World With Us</title>
+
+	<!-- css link -->
+	<link rel="stylesheet" type="text/css" href="static/style.css">
+
+	<!-- bootstrap cdn link -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+</head>
+<body>
+
+		<div class="col-md-6 form-wrapper">
+			<h1 class="form-heading">Predict Sales</h1>
+			<form class="form-container" action="{{ url_for('predict') }}" method="POST">
+				<input type="number" name="Store_No" placeholder="Enter Store No" class="form-input"> <input type="" name="Markdown1" placeholder="Enter Markdown Price1" class="form-input2"><br>
+				<input type="number" name="Dept_no" placeholder="Enter Department No" class="form-input"> <input type="" name="Markdown2" placeholder="Enter Markdown Price2" class="form-input2"><br>
+				<input type="date" name="Weekly_day" placeholder="Enter weekly Day" class="form-input"> <input type="" name="Markdown3" placeholder="Enter Markdown Price3" class="form-input2"><br>
+				<input type="" name="Fuel_price" placeholder="Enter Fuel price" class="form-input"> <input type="" name="Markdown4" placeholder="Enter Markdown Price4" class="form-input2"><br>
+				<input type="" name="Temp" placeholder="Enter Temperature" class="form-input"> <input type="" name="Markdown5" placeholder="Enter Markdown Price5" class="form-input2"><br>
+				<input type="text" name="Type" placeholder="Enter Type Of Store" class="form-input"><input type="" name="CPI" placeholder="Enter CPI" class="form-input2"><br>
+				<input type="" name="Unemployment_rate" placeholder="Enter UNEMPLOYMENT RATE" class="form-input"><br>
+    			<input type="" name="holiday" placeholder="Is this holiday?" class="form-input2"><br>
+                <input type="" name="Size" placeholder="Enter Size of Store" class="form-input"><br>
+                
+                				<!-- <button class="btn-submit">Predict</button> -->
+			 	<input type="submit" name="Submit" class="btn-submit" value="Predict">
+
+			</form>
+		</div>
+	</div>
+
+</body>
+</html>
+{% endblock %}
