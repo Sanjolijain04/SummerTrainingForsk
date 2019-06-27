@@ -1,38 +1,129 @@
-{% block code%}
 <!DOCTYPE html>
 <html>
 <head>
-	<title>WalMart | Predict the World With Us</title>
-
-	<!-- css link -->
-	<link rel="stylesheet" type="text/css" href="static/style.css">
-
-	<!-- bootstrap cdn link -->
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+	<title>Walmart Sales Prediction</title>
+</head>
+<body><style>
+h1 {
+    text-align: center;
+    color: red;
+}
+</style>
 </head>
 <body>
+<header>
+	<div class="logo"><img src="static/wam.jpg" width="200px"></div>
+</header>
+<h1>Walmart Sales Prediction</h1>
+<br><br>
+	<marquee behavior="alternate" bgcolor="purple" fontsize="60"  height=25 direction=LEFT > WALMART | PREDICT THE WORLD WITH US </marquee>
+<br><br>
 
+<link href='static/style4.css' rel='stylesheet'>
+
+	<div class="row wrapper">
+		<div class="col-md-6 proj-brief">
+			<!-- <h1 class="proj-heading">walmart</h1> -->
+		</div>
+		<marquee direction="down" scrollamount="10">
+<table width="100%">
+	<tr>
+		<td>
+<table width="10%" border="4" height="40%">
+	<tr width="100%" height="40%">
+		<td width="100%">
+			<img src="static/photo/e.jpg" width="130px">
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<img src="static/photo/f.jpg"  width="130px">
+		</td>
+	</tr>	
+	<tr>
+		<td>
+			<img src="static/photo/g.jpg" width="130px">
+		</td>
+	</tr>
+	<tr>
+		<td>	
+			<img src="static/photo/i.jpg" width="130px">
+		</td>
+	</tr>
+	<tr>
+		<td>	
+			<img src="static/photo/j.jpg" width="130px">
+		</td>
+	</tr>
+	<tr>
+		<td>	
+			<img src="static/photo/th.jpg" width="130px">
+		</td>
+	</tr>
+	<tr>
+		<td>	
+			<img src="static/photo/k.jpg" width="130px">
+		</td>
+	</tr>
+	</tr>
+</table>
+</td>
+<td>
+<table align="right" width="10%" border="4">
+	<tr width="100%">
+		<td width="100%">
+			<img src="static/photo/k.jpg" width="130px">
+		</td>
+	</tr>	
+	<tr>
+		<td>	
+			<img src="static/photo/th.jpg" width="130px">
+		</td>
+	</tr>
+	<tr>
+		<td>	
+			<img src="static/photo/j.jpg" width="130px">
+		</td>
+	</tr>
+	<tr>
+		<td>	
+			<img src="static/photo/i.jpg" width="130px">
+		</td>
+	</tr>
+	<tr>
+		<td>	
+			<img src="static/photo/g.jpg" width="130px">
+		</td>
+	</tr>
+	<tr>
+		<td>	
+			<img src="static/photo/f.jpg" width="130px">
+		</td>
+	</tr>
+	<tr>
+		<td>	
+			<img src="static/photo/e.jpg" width="130px">
+		</td>
+	</tr>
+</table>
+</td></tr></table>
+</marquee>
 		<div class="col-md-6 form-wrapper">
-			<h1 class="form-heading">Predict Sales</h1>
 			<form class="form-container" action="{{ url_for('predict') }}" method="POST">
 				<input type="number" name="Store_No" placeholder="Enter Store No" class="form-input"> <input type="" name="Markdown1" placeholder="Enter Markdown Price1" class="form-input2"><br>
-				<input type="number" name="Dept_no" placeholder="Enter Department No" class="form-input"> <input type="" name="Markdown2" placeholder="Enter Markdown Price2" class="form-input2"><br>
-				<input type="date" name="Weekly_day" placeholder="Enter weekly Day" class="form-input"> <input type="" name="Markdown3" placeholder="Enter Markdown Price3" class="form-input2"><br>
-				<input type="" name="Fuel_price" placeholder="Enter Fuel price" class="form-input"> <input type="" name="Markdown4" placeholder="Enter Markdown Price4" class="form-input2"><br>
-				<input type="" name="Temp" placeholder="Enter Temperature" class="form-input"> <input type="" name="Markdown5" placeholder="Enter Markdown Price5" class="form-input2"><br>
-				<input type="text" name="Type" placeholder="Enter Type Of Store" class="form-input"><input type="" name="CPI" placeholder="Enter CPI" class="form-input2"><br>
-				<input type="" name="Unemployment_rate" placeholder="Enter UNEMPLOYMENT RATE" class="form-input"><br>
-    			<input type="" name="holiday" placeholder="Is this holiday?" class="form-input2"><br>
-                <input type="" name="Size" placeholder="Enter Size of Store" class="form-input"><br>
-                
-                				<!-- <button class="btn-submit">Predict</button> -->
+				<input type="number" name="Dept_no" placeholder="Enter Department No" class="form-input"> <input type="" name="Markdown2" placeholder="Enter Markdown Price2" class="form-input2"><br><br>
+				<input type="date" name="Weekly_day" placeholder="Enter weekly Day" class="form-input"> <input type="" name="Markdown3" placeholder="Enter Markdown Price3" class="form-input2"><br><br>
+				<input type="" name="Fuel_price" placeholder="Enter Fuel price" class="form-input"> <input type="" name="Markdown4" placeholder="Enter Markdown Price4" class="form-input2"><br><br>
+				<input type="" name="Temp" placeholder="Enter Temperature" class="form-input"> <input type="" name="Markdown5" placeholder="Enter Markdown Price5" class="form-input2"><br><br>
+				<input type="text" name="Type" placeholder="Enter Type Of Store" class="form-input"><input type="" name="CPI" placeholder="Enter CPI" class="form-input2"><br><br>
+				<input type="" name="Unemployment_rate" placeholder="Enter UNEMPLOYMENT RATE" class="form-input"><input type="" name="holiday" placeholder="Enter Holiday" class="form-input2"><br><br>
+                <input type="" name="Size" placeholder="Enter Size of Store" class="form-input"><br><br>
 			 	<input type="submit" name="Submit" class="btn-submit" value="Predict">
 
 			</form>
 		</div>
 	</div>
 
+
 </body>
 </html>
-{% endblock %}

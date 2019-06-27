@@ -1,0 +1,22 @@
+{% block code %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>PREDICTION</title>
+</head>
+<body>
+    
+<link href='static/first.css' rel='stylesheet'>
+<div class="img-circular"></div>
+
+<form class="form-container" action="{{ url_for('home') }}" method="POST">  
+    <input type="submit" name="Submit" class="btn-start" value="LET'S GET STARTED">
+
+</form>  
+  
+</body>
+</html>
+    
+{% endblock %}
+
+<!--<img class="img-circle" src="static/wal.jpg" height="500" width="500" >-->

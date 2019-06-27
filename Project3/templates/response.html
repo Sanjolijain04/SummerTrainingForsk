@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% block code %}
+    
+
+
+<html>
+<head>
+	<title>PREDICTION</title>
+</head>
+<body>
+<link href='static/response.css' rel='stylesheet'>
+<style>
+p{
+	color:black;
+	text-align: center;
+}
+</style>
+<script type="text/javascript">
+	function goBack(){
+		window.history.back();
+	}
+</script>
+</head>
+<body>
+<br><br><br><br><br><br><br><br>
+<p><font size="5"><b> Prediction is{{ status }}<br><br>
+<button onclick="goBack()">Click here</button> to go back</b></font> </p>
+</body>
+</html>
+
+{% endblock %}

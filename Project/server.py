@@ -12,6 +12,10 @@ from datetime import datetime as dt
 app = Flask(__name__)
 
 @app.route("/main")
+def first():
+    return render_template("first.html")
+
+@app.route("/next", methods=["POST"])
 def home():
     return render_template("index.html")
 
@@ -83,4 +87,4 @@ def predict():
     return render_template('response.html', status=output)
 
 if __name__ == "__main__":
-    app.run(debug=True, port=8800)
+    app.run(debug=True)

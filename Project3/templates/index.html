@@ -1,0 +1,47 @@
+{% block code %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Walmart Sales Prediction</title>
+</head>
+<body>
+    <style>
+    h1 {
+    text-align: center;
+    color: #1F5856;
+    font: Georgia;
+    }
+    </style>
+</head>
+<body>
+<h1>Walmart Sales Prediction</h1>
+<br><br>
+<br><br>
+
+<link href='static/style4.css' rel='stylesheet'>
+
+	<div class="row wrapper">
+		<div class="col-md-6 proj-brief">
+			<!-- <h1 class="proj-heading">walmart</h1> -->
+		</div>
+
+		<div class="col-md-6 form-wrapper">
+			<form class="form-container" action="{{ url_for('predict') }}" method="POST">
+				<input type="number" name="Store_No" placeholder="Enter Store No" class="form-input"> <input type="" name="Markdown1" placeholder="Enter Markdown Price1" class="form-input2"><br>
+				<input type="number" name="Dept_no" placeholder="Enter Department No" class="form-input"> <input type="" name="Markdown2" placeholder="Enter Markdown Price2" class="form-input2"><br><br>
+				<input type="date" name="Weekly_day" placeholder="Enter weekly Day" class="form-input"> <input type="" name="Markdown3" placeholder="Enter Markdown Price3" class="form-input2"><br><br>
+				<input type="" name="Fuel_price" placeholder="Enter Fuel price" class="form-input"> <input type="" name="Markdown4" placeholder="Enter Markdown Price4" class="form-input2"><br><br>
+				<input type="" name="Temp" placeholder="Enter Temperature" class="form-input"> <input type="" name="Markdown5" placeholder="Enter Markdown Price5" class="form-input2"><br><br>
+				<input type="text" name="Type" placeholder="Enter Type Of Store" class="form-input"><input type="" name="CPI" placeholder="Enter CPI" class="form-input2"><br><br>
+				<input type="" name="Unemployment_rate" placeholder="Enter UNEMPLOYMENT RATE" class="form-input"><input type="" name="holiday" placeholder="Enter Holiday" class="form-input2"><br><br>
+                <input type="" name="Size" placeholder="Enter Size of Store" class="form-input"><br><br>
+			 	<input type="submit" name="Submit" class="btn-submit" value="Predict">
+
+			</form>
+		</div>
+	</div>
+
+
+</body>
+</html>
+{% endblock %}

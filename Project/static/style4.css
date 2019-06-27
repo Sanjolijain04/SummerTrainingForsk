@@ -1,0 +1,85 @@
+body{ 
+	background: url('a.jpg') no-repeat;
+	background-color: lightblue;
+    background-size: cover;
+    font-family: arial; 
+    color: white;
+   }
+.logo{
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	opacity:.6;
+}
+ul{
+	margin: 0px;
+	padding: 1px;
+	list-style: none;
+
+}
+ul li{
+float: left;
+width: 200px;
+height: 40px;
+background-color: black;
+opacity: .8;
+line-height: 40px;
+text-align: center;
+font-style: 20px;
+margin-right: 3%;
+}
+ul li a{
+	text-decoration: initial;
+	color: white;
+	display: block;
+	}
+	ul li a:hover{
+		background-color:blue ;
+
+	}
+	ul li ul li{
+		display: none;
+	}
+	ul li:hover ul li{
+		display:block;
+	}
+	
+
+.form-heading{
+    color: #3fb0ac;
+    margin-bottom: 40px;
+    margin-left: 70px;
+    text-transform: uppercase;
+}
+.form-input{
+    margin-left: 500px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #3fb0ac;
+    border-radius: 2px;
+    font-size: 10px;
+    font-family: "Montserrat"
+    width: 100%;
+}
+.btn-submit{
+    margin-top: 30px;
+    background-color: #1F5856;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: lighter;
+    margin-left: 570px;
+    padding: 10px;
+}
+
+.form-input2{
+    margin-right: 100px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #3fb0ac;
+    border-radius: 2px;
+    font-size: 10px;
+    font-family: "Montserrat"
+    width: 100%;
+}

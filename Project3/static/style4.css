@@ -1,0 +1,52 @@
+body{ 
+	/*background: url('second.jpg') no-repeat;*/
+	background-color: lightblue;
+    background-size: cover;
+    font-family: arial; 
+    color: white;
+   }
+.logo{
+	position: absolute;
+	left: 10px;
+	top: 10px;
+	opacity:.6;
+}
+
+.form-heading{
+    color: white;
+    margin-bottom: 40px;
+    margin-left: 70px;
+    text-transform: uppercase;
+}
+.form-input{
+    margin-left: 50px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #3fb0ac;
+    border-radius: 2px;
+    font-size: 10px;
+    font-family: "Montserrat"
+    width: 100%;
+}
+.btn-submit{
+    margin-top: 30px;
+    background-color: #1F5856;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: lighter;
+    margin-left: 570px;
+    padding: 10px;
+}
+
+.form-input2{
+    margin-right: 500px;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #3fb0ac;
+    border-radius: 2px;
+    font-size: 10px;
+    font-family: "Montserrat"
+    width: 100%;
+}

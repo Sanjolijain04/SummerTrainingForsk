@@ -1,0 +1,24 @@
+html{
+    height: 80%;
+    margin: 0 auto;
+    background-color: #3a7cbd;
+    background-image: url("Walmart.jpg");
+    height: 80%; 
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+    overflow-y: scroll;
+}
+.btn-start{
+    margin-top: 30px;
+    background-color: #1F5856;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: lighter;
+    margin-left: 570px;
+    padding: 10px;
+}
