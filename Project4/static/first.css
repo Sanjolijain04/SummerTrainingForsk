@@ -1,0 +1,24 @@
+body{
+	background: url("wal.jpg") no-repeat;
+	background-color: lightblue;
+	width: 100%
+	background-size: fit;
+    font-family: arial; 
+    color: white;
+   }
+   
+.btn-start{
+    margin-top: 300px;
+    background-color: #1F5856;
+    border: none;
+    border-radius: 5px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: lighter;
+    margin-left: 1080px;
+    padding: 10px;
+}
+
+.img-circle {
+    border-radius: 50%;
+}

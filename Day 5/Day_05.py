@@ -112,7 +112,7 @@ Class Variables
 
 class Employee:
     # declare this in the class level 
-    num_of_emps = 0
+    num_of_emps = 0  #class variable
     
     def __init__(self, first, last, pay):
         self.first = first
